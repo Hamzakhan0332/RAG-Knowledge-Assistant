@@ -9,10 +9,17 @@ from llama_index.core import PromptTemplate
 import chromadb
 
 def init_settings(engine_type="Local (Ollama)", api_key=None):
-    """Initialize settings. Switching between Local and Cloud for speed."""
+    """Initialize settings. Robust for both Local and Cloud deployment."""
     
-    # Always Local Embedding for Privacy
-    Settings.embed_model = HuggingFaceEmbedding(model_name="./all-MiniLM-L6-v2.pt")
+    # Smart check for Embedding Model (Local path vs HuggingFace)
+    local_model_path = "./all-MiniLM-L6-v2.pt"
+    if os.path.exists(local_model_path):
+        embed_model_name = local_model_path
+    else:
+        # Fallback for Streamlit Cloud or if folder is missing
+        embed_model_name = "sentence-transformers/all-MiniLM-L6-v2"
+    
+    Settings.embed_model = HuggingFaceEmbedding(model_name=embed_model_name)
     Settings.text_splitter = SentenceSplitter(chunk_size=1000, chunk_overlap=200)
 
     if engine_type == "Cloud (Groq)" and api_key:

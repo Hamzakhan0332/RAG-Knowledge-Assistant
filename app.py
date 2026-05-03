@@ -34,6 +34,9 @@ with st.sidebar:
         help="Local uses your hardware (private but slow). Cloud uses Groq (fast but needs API key)."
     )
     
+    if engine_type == "Local (Ollama)":
+        st.info("💡 **Note:** If you are viewing this on Streamlit Cloud, you must use **Cloud (Groq)** mode, as the server cannot connect to your local Ollama.")
+    
     api_key = None
     if engine_type == "Cloud (Groq)":
         api_key = st.text_input("Groq API Key", type="password")

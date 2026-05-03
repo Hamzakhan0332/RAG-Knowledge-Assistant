@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🧠 Local RAG Knowledge Assistant
 
 Hey there! This is a simple but powerful RAG (Retrieval-Augmented Generation) assistant that I built to help chat with documents locally. Whether you're a privacy enthusiast or just tired of slow local inference, this tool gives you the best of both worlds.
@@ -46,3 +47,6 @@ streamlit run app.py
 Feel free to fork this, open issues, or submit PRs. This was built to be a clean, hackable starting point for anyone exploring local AI.
 
 *Happy Chatting!*
+=======
+# RAG-Knowledge-Assistant
+>>>>>>> 3b4ac10ea2ed57e2ca2106d1ff0f4863d46d940a
