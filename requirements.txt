@@ -1,0 +1,13 @@
+pypdf
+llama-index-core
+llama-index-llms-ollama
+llama-index-llms-groq
+llama-index-embeddings-huggingface
+llama-index-vector-stores-chroma
+chromadb
+streamlit
+sentence-transformers
+unstructured[pdf]
+python-docx
+langchain
+ollama
